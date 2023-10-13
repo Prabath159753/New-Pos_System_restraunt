@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="507.0" prefWidth="718.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.intelleon.controller.ManageUserFormController">
+    <children>
+        <Label alignment="CENTER" layoutX="222.0" layoutY="14.0" prefHeight="56.0" prefWidth="316.0" text="Manage Cashier" textAlignment="CENTER" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0">
+            <font>
+                <Font name="Arial Black" size="31.0" />
+            </font>
+        </Label>
+        <GridPane hgap="80.0" layoutX="56.0" layoutY="112.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="112.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <JFXTextField fx:id="txtUserId" labelFloat="true" onAction="#searchUserOnAction" prefHeight="25.0" prefWidth="166.0" promptText="User Id">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </JFXTextField>
+                <JFXTextField fx:id="txtUserName" labelFloat="true" prefHeight="25.0" prefWidth="173.0" promptText="User Name" GridPane.columnIndex="1">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </JFXTextField>
+                <JFXPasswordField fx:id="txtPassword" labelFloat="true" prefHeight="25.0" prefWidth="173.0" promptText="Password" GridPane.columnIndex="2">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </JFXPasswordField>
+            </children>
+        </GridPane>
+        <GridPane hgap="80.0" layoutX="46.0" layoutY="181.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="181.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="500.0" minWidth="-Infinity" prefWidth="179.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="168.0" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <JFXCheckBox fx:id="chetActiveState" prefHeight="19.0" prefWidth="171.0" text="Active State" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </JFXCheckBox>
+                <JFXTextField fx:id="txtUserType" labelFloat="true" prefHeight="29.0" prefWidth="169.0" promptText="User Type" GridPane.rowIndex="1">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                </JFXTextField>
+            </children>
+        </GridPane>
+        <JFXButton fx:id="btnSave" layoutX="379.0" layoutY="240.0" onAction="#btnSaveOnAction" prefHeight="31.0" prefWidth="91.0" style="-fx-border-color: black; -fx-background-color: #00b894;" text="Save" textFill="WHITE" AnchorPane.rightAnchor="255.0" AnchorPane.topAnchor="240.0">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </JFXButton>
+        <JFXButton fx:id="btnClear" layoutX="605.0" layoutY="240.0" onAction="#btnClearOnAction" prefHeight="31.0" prefWidth="91.0" style="-fx-border-color: black; -fx-background-color: #d63031;" text="Cleare" textFill="WHITE" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="240.0">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </JFXButton>
+        <JFXButton fx:id="btnUpdate" layoutX="475.0" layoutY="240.0" onAction="#btnUpdateOnAction" prefHeight="31.0" prefWidth="91.0" style="-fx-border-color: black; -fx-background-color: #0984e3;" text="Update" textFill="WHITE" AnchorPane.rightAnchor="153.0" AnchorPane.topAnchor="240.0">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </JFXButton>
+        <TableView fx:id="tblUser" layoutX="39.0" layoutY="287.0" prefHeight="200.0" prefWidth="643.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="295.0">
+            <columns>
+                <TableColumn fx:id="colUserId" prefWidth="89.0" text="User ID" />
+                <TableColumn fx:id="colUserName" prefWidth="134.0" text="User Name" />
+                <TableColumn fx:id="colPassword" prefWidth="97.0" text="Password" />
+                <TableColumn fx:id="colActiveState" prefWidth="125.0" text="Active State" />
+                <TableColumn fx:id="colUserType" prefWidth="100.0" text="User Type" />
+                <TableColumn fx:id="colOption" prefWidth="97.0" text="Option" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>
